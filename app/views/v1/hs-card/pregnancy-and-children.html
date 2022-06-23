@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Pregnancy and Children</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        
+        <p>Your pregnancy due date: 23 August 2022</p>
+        
+
+        <h2 class="nhsuk-heading-m">Pregnancy and Children</h2>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if (data['childsfirstname']) and (data['childslastname']) %}
+                  {{ data['childsfirstname'] }} {{ data['childslastname'] }}
+                {% else %}
+                  John Smith
+                {% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01 / 01 / 2020
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Change<span class="nhsuk-u-visually-hidden"> child details</span>
+                </a>
+              </dd>
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sarah Smith
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01  / 01 / 2021
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Change<span class="nhsuk-u-visually-hidden"> child details</span>
+                </a>
+              </dd>
+            </div>     
+
+        </dl>
+
+        <h2 class="nhsuk-heading-m">Updaing your pregnancy or childs details</h2>
+
+    </div>
+
+</div>
+{% endblock %}
