@@ -1,0 +1,123 @@
+Start code
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}  
+<div class="nhsuk-back-link">
+  <a class="nhsuk-back-link__link" href="#">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back</a>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Your personal details</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            These details will be checked every fours weeks
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>To make sure you are still eligiable, your personal details will be checked every four weeks to confirm your eligibilty.</p>
+      
+        </div>
+      </details>
+
+        <!-- Keep within here -->
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+            {{ data['first-name'] }} {{ data['last-name'] }}
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="personsdetails">
+                Change<span class="nhsuk-u-visually-hidden"> Change name</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1 January 1992
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="date-of-birth">
+                Change<span class="nhsuk-u-visually-hidden">Change date of birth</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              13 Building Street Road<br>Leeds<br> N34 1HS
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="address">
+                Change<span class="nhsuk-u-visually-hidden">Change address</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              National insurance number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>AB 12 34 56 C</p>
+            </dd>
+        
+            <dd class="nhsuk-summary-list__actions">
+        
+              <a href="national-insurance-number">
+                Change<span class="nhsuk-u-visually-hidden">Change national insurance number</span>
+              </a>
+        
+            </dd>
+        
+          </div>
+        
+        </dl>
+
+
+        <!-- Keep within here -->
+
+    </div>
+
+</div>
+{% endblock %}
