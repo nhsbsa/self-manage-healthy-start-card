@@ -5,27 +5,35 @@
 // External dependencies
 const express = require('express');
 const router = express.Router();
-const moment = require('moment');
-const stringSimilarity = require("string-similarity");
-const geolib = require('geolib');
-const https = require("https");
-
-// CONSTANTS
-const today = new Date(Date.now());
-const { listenerCount } = require('gulp');
 
 // ********************************
 
+// Updating a childs name
+router.post('/child-name', (req, res) => {
 
-router.post('/v1/child-name', function (req, res) {
+  const firstName = req.session.data['childsfirstname']
+  const lastName = req.session.data['childslastname']
 
-    const firstName = req.session.data['childsfirstname']
-    const lastName = req.session.data['childslastname']
-  
-    if (firstName && lastName) {
-      res.redirect('/v1/hs-card/pregnancy-and-children');
-    } else {
-        res.redirect('/v1/hs-card/child-name');
-    }
-  
+  if (firstName && lastName) {
+    res.redirect('/v1/hs-card/pregnancy-and-children');
+  } else {
+      res.redirect('/v1/hs-card/child-name');
+  }
 })
+
+// Updating the beneficiaries name
+router.post('/full-name', (req, res) => {
+
+  const firstName = req.session.data['first-name']
+  const lastName = req.session.data['last-name']
+
+  if (firstName && lastName) {
+     res.redirect('/v1/personal-details/cya-personal-details');
+  } else {
+      res.redirect('/v1/personal-details/full-name');
+  }
+
+})
+
+
+module.exports = router;
