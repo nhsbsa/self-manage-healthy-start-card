@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Check your answers</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        
+        <p>Your new PIN should be with you within [x] hours.</p>
+        
+
+        <h2 class="nhsuk-heading-m">New PIN to be sent via [option]</h2>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Moble
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                07777777777
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Change<span class="nhsuk-u-visually-hidden"> where to receive your PIN</span>
+                </a>
+              </dd>
+            </div>
+
+        </dl>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+        <p><a href="#">Cancel</a></p>
+
+    </div>
+
+</div>
+{% endblock %}
