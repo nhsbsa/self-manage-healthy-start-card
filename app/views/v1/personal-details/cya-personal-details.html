@@ -25,18 +25,6 @@ Get help to buy food and milk (Healthy Start)
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
-      <details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            These details will be checked every fours weeks
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>To make sure you are still eligiable, your personal details will be checked every four weeks to confirm your eligibilty.</p>
-      
-        </div>
-      </details>
-
         <!-- Keep within here -->
         <dl class="nhsuk-summary-list">
 
@@ -45,13 +33,17 @@ Get help to buy food and milk (Healthy Start)
               Name
             </dt>
             <dd class="nhsuk-summary-list__value">
-            {{ data['first-name'] }} {{ data['last-name'] }}
+              {% if (data['first-name']) and (data['last-name']) %}
+                {{ data['first-name'] }} {{ data['last-name'] }}
+              {% else %}
+                Sarah Smith
+              {% endif %}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
               <a href="full-name">
-                Change<span class="nhsuk-u-visually-hidden"> Change name</span>
+                Change<span class="nhsuk-u-visually-hidden"> name</span>
               </a>
         
             </dd>
@@ -63,13 +55,17 @@ Get help to buy food and milk (Healthy Start)
               Date of birth
             </dt>
             <dd class="nhsuk-summary-list__value">
-              1 January 1992
+              {% if (data['dob-day']) and (data['dob-month']) and (data['dob-year']) %}
+                {{ data['dob-day'] }} / {{ data['dob-month'] }} / {{ data['dob-year'] }}
+              {% else %}
+                01 / 01 / 1992
+              {% endif %}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
               <a href="date-of-birth">
-                Change<span class="nhsuk-u-visually-hidden">Change date of birth</span>
+                Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
               </a>
         
             </dd>
@@ -81,13 +77,23 @@ Get help to buy food and milk (Healthy Start)
               Address
             </dt>
             <dd class="nhsuk-summary-list__value">
+              {% if (data['address-line-1']) %}
+                {{data['address-line-1']}}<br>
+                {% if (data['address-line-2']) %}
+                  {{data['address-line-2']}}<br>
+                {% endif %}
+                {{data['address-town']}}<br>
+                {{data['address-county']}}<br>
+                {{data['address-postcode']}}<br>
+              {% else %}
               13 Building Street Road<br>Leeds<br> N34 1HS
+              {% endif %}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
               <a href="address">
-                Change<span class="nhsuk-u-visually-hidden">Change address</span>
+                Change<span class="nhsuk-u-visually-hidden"> address</span>
               </a>
         
             </dd>
@@ -99,13 +105,17 @@ Get help to buy food and milk (Healthy Start)
               National insurance number
             </dt>
             <dd class="nhsuk-summary-list__value">
-              <p>AB 12 34 56 C</p>
+              {% if (data['nino']) %}
+                {{ data['nino'] }}
+              {% else %}
+                <p>AB 12 34 56 C</p>
+              {% endif %}
             </dd>
         
             <dd class="nhsuk-summary-list__actions">
         
               <a href="national-insurance-number">
-                Change<span class="nhsuk-u-visually-hidden">Change national insurance number</span>
+                Change<span class="nhsuk-u-visually-hidden"> national insurance number</span>
               </a>
         
             </dd>
@@ -113,6 +123,18 @@ Get help to buy food and milk (Healthy Start)
           </div>
         
         </dl>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              These details will be checked every fours weeks
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>To make sure you are still eligiable, your personal details will be checked every four weeks to confirm your eligibilty.</p>
+        
+          </div>
+        </details>
 
 
         <!-- Keep within here -->

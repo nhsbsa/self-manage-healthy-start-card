@@ -13,14 +13,27 @@ Do you want to unfreeze your Healthy Start card?
             "text": "Go back"
         }) }}
 
-        <h1 class="nhsuk-heading-xl">Your card is now frozen</h1>
+        <h1 class="nhsuk-heading-xl">
+            {% if (data['freeze'] == 'yes') %}
+                Your card is now frozen
+            {% else %}
+                Your card is no longer frozen
+            {% endif %}
+        </h1>
 
-        <p>Your card has now been frozen, this means you will no longer be able to use your card for purchases.</p>
-        <p>If your card has been lost or stolen then you must report this right away.</p>
-        <p><a href="lost-or-stolen-card">Report your card lost or stolen</a></p>
+        {% if (data['freeze'] == 'yes') %}
+            <p>Your card has now been frozen, this means you will no longer be able to use your card for purchases.</p>
+            <p>If your card has been lost or stolen then you must report this right away.</p>
+            <p><a href="lost-or-stolen-card">Report your card lost or stolen</a></p>
+            <h2 class="nhsuk-heading-l">How to unfreeze your card</h2>
+            <p>When you wish to have your card unfrozen, you must return to the self-managing portal and return to the 'Report your card lost or stolen' page and choose to unfreeze your card.</p>
+        {% else %}
+            <p>Your card is no longer frozen, this means you will now be able to use your card for purchases.</p>
+            <h2 class="nhsuk-heading-l">How to freeze your card</h2>
+            <p>When you wish to have your card frozen, you must return to the self-managing portal and return to the 'Report your card lost or stolen' page and choose to freeze your card.</p>
+        {% endif %}
 
-        <h2 class="nhsuk-heading-l">How to unfreeze your card</h2>
-        <p>When you wish to have your card unfrozen, you must return to the self-managing portal and return to the 'Report your card lost or stolen' page and choose to unfreeze your card.</p>
+        <a class="nhsuk-button nhsuk-u-margin-top-5" href="../dashboard">Go back to dashboard</a>
 
     </div>
 </div>

@@ -1,29 +1,29 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Get help to buy food and milk (Healthy Start) 
+Get help to buy food and milk (Healthy Start)
 {% endblock %}
 
-{% block content %}    
+{% block content %}
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-two-thirds">
 
-        <h1 class="nhsuk-heading-xl">Pregnancy and Children</h1>
+    <h1 class="nhsuk-heading-xl">Pregnancy and Children</h1>
 
-    </div>
+  </div>
 </div>
 <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+  <div class="nhsuk-grid-column-two-thirds">
 
-        
-        <p>Your pregnancy due date: 23 August 2022</p>
-        
 
-        <h2 class="nhsuk-heading-m">Pregnancy and Children</h2>
+    <p>Your pregnancy due date: 23 August 2022</p>
 
-        <dl class="nhsuk-summary-list">
 
-            <div class="nhsuk-summary-list__row">
+    <h2 class="nhsuk-heading-m">Your Children</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
               <dt class="nhsuk-summary-list__key">
                 {% if (data['childsfirstname']) and (data['childslastname']) %}
                   {{ data['childsfirstname'] }} {{ data['childslastname'] }}
@@ -32,11 +32,15 @@ Get help to buy food and milk (Healthy Start)
                 {% endif %}
               </dt>
               <dd class="nhsuk-summary-list__value">
-                01 / 01 / 2020
+                {% if (data['childsfirstname']) and (data['childslastname']) %}
+                  {{ data['childsdateofbirthday'] }} / {{ data['childsdateofbirthmonth'] }} / {{ data['childsdateofbirthyear'] }}
+                {% else %}
+                  01 / 01 / 2020
+                {% endif %}
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="child-name">
-                  Change<span class="nhsuk-u-visually-hidden"> child details</span>
+                  Edit<span class="nhsuk-u-visually-hidden"> child details</span>
                 </a>
               </dd>
             </div>
@@ -50,16 +54,53 @@ Get help to buy food and milk (Healthy Start)
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a href="child-name">
-                  Change<span class="nhsuk-u-visually-hidden"> child details</span>
+                  Edit<span class="nhsuk-u-visually-hidden"> child details</span>
                 </a>
               </dd>
             </div>     
 
-        </dl>
+            <!-- {% if data['childList'] %}
 
-        <h2 class="nhsuk-heading-m">Updaing your pregnancy or childs details</h2>
+            {% for item in data['childList'] %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__value">{{ item.ChildsFirstName }} {{ item.ChildsLastName }}</dt>
+              <dd class="nhsuk-summary-list__value">Born on {{ item.ChildsDOB }}</dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">Edit<span class="nhsuk-u-visually-hidden"> child</span></a>
+              </dd>
+            </div>
+            {% endfor %}
 
+
+            {% else %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                  John Smith
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                  01 / 01 / 2020
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Edit<span class="nhsuk-u-visually-hidden"> child</span>
+                </a>
+              </dd>
+            </div>
+
+            {% endif %} -->
+
+    </dl>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>An eligibility check is run against your childs details every 4 weeks.</p>
+      <p>Next eligibility check: 29 June 2022</p>
     </div>
+
+    <a class="nhsuk-button" href="../dashboard">Go to dashboard</a>
+
+  </div>
 
 </div>
 {% endblock %}

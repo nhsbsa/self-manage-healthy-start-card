@@ -1,0 +1,83 @@
+Start code
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start)
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Manage your Healthy Start</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+
+                <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <h2 class="nhsuk-heading-m">Current balance</h2>
+                        <p class="nhsuk-card__description">£34.71</p>
+                        <h2 class="nhsuk-heading-m">Next payment</h2>
+                        <p class="nhsuk-card__description">£8.50</p>
+                        <p class="nhsuk-u-padding-top-4">Is something not right? <a href="#">How we calculate your payments</a>.</p>
+                    </div>
+                </div>
+
+            </li>
+            <li class="nhsuk-grid-column-full nhsuk-card-group__item">
+                <!-- <div class="nhsuk-card">
+                    <div class="nhsuk-card__content">
+                        <p class="nhsuk-card__description">Your next payment will be Thursday 16th June</p>
+                    </div>
+                </div> -->
+                <div class="nhsuk-inset-text nhsuk-u-margin-top-1 nhsuk-u-margin-bottom-5">
+                    <span class="nhsuk-u-visually-hidden">Information: </span>
+                    <p class="nhsuk-card__description">Your next payment will be Thursday 16th June</p>
+                </div>
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                            <a class="nhsuk-card__link" href="hs-card/your-healthy-start-card">Your Healthy Start card</a>
+                        </h2>
+                        <p class="nhsuk-card__description">Manage your card, pregnancy and children details</p>
+                    </div>
+                </div>
+
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+                <div class="nhsuk-card nhsuk-card--clickable">
+                    <div class="nhsuk-card__content">
+                        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                            <a class="nhsuk-card__link" href="personal-details/cya-personal-details">Your personal details</a>
+                        </h2>
+                        <p class="nhsuk-card__description">View and edit your personal details</p>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+            <h2 class="nhsuk-heading-m">Useful links</h2>
+            <ul class="nhsuk-list">
+                <li><a rel="noreferrer noopener" href="https://www.healthystart.nhs.uk/what-youll-get-and-how-to-shop/" target="_blank">Using your card (opens in a new tab)</a></li>
+                <li><a rel="noreferrer noopener" href="https://www.healthystart.nhs.uk/getting-vitamins/" target="_blank">Collecting vitamins (opens in a new tab)</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

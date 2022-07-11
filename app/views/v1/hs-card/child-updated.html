@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+[Child name] has been updated
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                {% if (data['childsfirstname']) and (data['childslastname']) %}
+                  {{ data['childsfirstname'] }} {{ data['childslastname'] }} has been updated
+                {% else %}
+                  [Child Name] has been updated
+                {% endif %}
+              </h1>
+            </div>
+          </div>
+
+          <p>Your childs details have now been changed.</p>
+          <h2 class="nhsuk-heading-l">What happens next?</h2>
+          <p>You will continue to receive your regular payments as normal.</p>
+          <p>An eligibility check is run every 4 weeks against your childs details, a notification will be sent to you if there are any changes.</p>
+          <p>Next eligibility check: 29 June 2022</p>
+
+          <a class="nhsuk-button nhsuk-u-margin-top-4" href="./pregnancy-and-children">Continue</a>
+
+    </div>
+
+</div>
+
+{% endblock %}
