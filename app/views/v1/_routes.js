@@ -14,8 +14,10 @@ router.post('/freeze-card', (req, res) => {
   
   const freezeCard = req.session.data['freeze']
 
-  if (freezeCard){
+  if (freezeCard == 'yes'){
     res.redirect('/v1/hs-card/card-frozen-or-unfrozen');
+  } else if (freezeCard == 'no') {
+    res.redirect('/v1/hs-card/lost-or-stolen-card');
   } else {
     res.redirect('/v1/hs-card/freeze-card');
   }
@@ -26,8 +28,10 @@ router.post('/unfreeze-card', (req, res) => {
   
   const freezeCard = req.session.data['unfreeze']
 
-  if (freezeCard){
+  if (freezeCard == 'yes'){
     res.redirect('/v1/hs-card/card-frozen-or-unfrozen');
+  } else if (freezeCard == 'no') {
+    res.redirect('/v1/hs-card/lost-or-stolen-card');
   } else {
     res.redirect('/v1/hs-card/freeze-card');
   }
