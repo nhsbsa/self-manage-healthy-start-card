@@ -13,7 +13,11 @@ Do you want to freeze your Healthy Start card?
             "text": "Go back"
         }) }}
 
-        <form action="/v1/freeze-card" method="post">
+        {% if (data['freeze'] == 'yes') %}
+            <form action="/v1/unfreeze-card" method="post">
+        {% else %}
+            <form action="/v1/freeze-card" method="post">
+        {% endif %}
 
             <div class="nhsuk-form-group">
 
@@ -38,14 +42,25 @@ Do you want to freeze your Healthy Start card?
 
                     <div class="nhsuk-radios nhsuk-radios--inline">
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="yes" name="freeze" type="radio" value="yes">
-                            <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            {% if (data['freeze'] == 'yes') %}
+                                <input class="nhsuk-radios__input" id="yes" name="unfreeze" type="radio" value="yes">
+                                <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            {% else %}
+                                <input class="nhsuk-radios__input" id="yes" name="freeze" type="radio" value="yes">
+                                <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            {% endif %}
                                 Yes
                             </label>
                         </div>
                         <div class="nhsuk-radios__item">
-                            <input class="nhsuk-radios__input" id="no" name="freeze" type="radio" value="no">
-                            <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            {% if (data['freeze'] == 'yes') %}
+                                <input class="nhsuk-radios__input" id="no" name="unfreeze" type="radio" value="no">
+                                <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            {% else %}
+                                <input class="nhsuk-radios__input" id="no" name="freeze" type="radio" value="no">
+                                <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            {% endif %}
+                            
                                 No
                             </label>
                         </div>

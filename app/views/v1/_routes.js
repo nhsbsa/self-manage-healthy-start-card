@@ -22,6 +22,18 @@ router.post('/freeze-card', (req, res) => {
 
 })
 
+router.post('/unfreeze-card', (req, res) => {
+  
+  const freezeCard = req.session.data['unfreeze']
+
+  if (freezeCard){
+    res.redirect('/v1/hs-card/card-frozen-or-unfrozen');
+  } else {
+    res.redirect('/v1/hs-card/freeze-card');
+  }
+
+})
+
 // ****************************************
 // * Updating childs details
 // ****************************************
