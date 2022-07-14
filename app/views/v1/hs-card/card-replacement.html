@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you want to unfreeze your Healthy Start card?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-xl">Order a replacement card</h1>
+
+        <p>If you wish to order a new healthy start card, this will block your current card preventing it from being used.</p>
+        <p>Your new card will be dispatched and delivered to you within 10 days.</p>
+
+        <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>If you wish to cancel your replacement you will have X days to get in touch with us by calling 0300 330 7010 - charges may apply</p>
+        </div>
+
+        <a class="nhsuk-button" href="order-new-card">Continue</a>
+
+    </div>
+</div>
+
+{% endblock %}

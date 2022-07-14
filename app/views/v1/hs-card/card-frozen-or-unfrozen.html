@@ -27,8 +27,16 @@ Do you want to unfreeze your Healthy Start card?
             <p>When you wish to have your card frozen, you must return to the self-managing portal and return to the 'Report your card lost or stolen' page and choose to freeze your card.</p> 
         {% else %}
             <p>Your card has now been frozen, this means you will no longer be able to use your card for purchases.</p>
-            <p>If your card has been lost or stolen then you must report this right away.</p>
-            <p><a href="lost-or-stolen-card">Report your card lost or stolen</a></p>
+            <p class="nhsuk-u-margin-bottom-7">If your card has been damaged, stolen or lost for over X hours then we advise you order a replacement.</p>
+            <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="card-replacement">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Order a replacement card</span>
+                </a>
+            </div>
             <h2 class="nhsuk-heading-l">How to unfreeze your card</h2>
             <p>When you wish to have your card unfrozen, you must return to the self-managing portal and return to the 'Report your card lost or stolen' page and choose to unfreeze your card.</p>
         {% endif %}

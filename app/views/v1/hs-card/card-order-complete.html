@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+[Child name] has been updated
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                Your replacement card is being processed
+              </h1>
+            </div>
+          </div>
+
+          <p>Your card will be with you in the next 10 days. This will be sent to the following address:</p>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Sarah Smith
+              </dd>
+          
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Delivery address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if (data['address-line-1']) %}
+                    {{data['address-line-1']}}<br>
+                {% if (data['address-line-2']) %}
+                  {{data['address-line-2']}}<br>
+                {% endif %}
+                    {{data['address-town']}}<br>
+                    {{data['address-county']}}<br>
+                    {{data['address-postcode']}}<br>
+                {% else %}
+                    13 Building Street Road<br>Leeds<br> N34 1HS
+                {% endif %}
+              </dd>
+          
+            </div>
+          
+          </dl>
+
+          <a class="nhsuk-button nhsuk-u-margin-top-4" href="../dashboard">Go to dashboard</a>
+
+    </div>
+
+</div>
+
+{% endblock %}
