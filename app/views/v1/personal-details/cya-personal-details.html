@@ -33,14 +33,6 @@ Get help to buy food and milk (Healthy Start)
               {% endif %}
             </dd>
         
-            <dd class="nhsuk-summary-list__actions">
-        
-              <a href="full-name">
-                Change<span class="nhsuk-u-visually-hidden"> name</span>
-              </a>
-        
-            </dd>
-        
           </div>
         
           <div class="nhsuk-summary-list__row">
@@ -53,14 +45,6 @@ Get help to buy food and milk (Healthy Start)
               {% else %}
                 01 / 01 / 1992
               {% endif %}
-            </dd>
-        
-            <dd class="nhsuk-summary-list__actions">
-        
-              <a href="date-of-birth">
-                Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
-              </a>
-        
             </dd>
         
           </div>
@@ -83,19 +67,11 @@ Get help to buy food and milk (Healthy Start)
               {% endif %}
             </dd>
         
-            <dd class="nhsuk-summary-list__actions">
-        
-              <a href="address">
-                Change<span class="nhsuk-u-visually-hidden"> address</span>
-              </a>
-        
-            </dd>
-        
           </div>
         
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
-              National insurance number
+              National Insurance number
             </dt>
             <dd class="nhsuk-summary-list__value">
               {% if (data['nino']) %}
@@ -105,31 +81,21 @@ Get help to buy food and milk (Healthy Start)
               {% endif %}
             </dd>
         
-            <dd class="nhsuk-summary-list__actions">
-        
-              <a href="national-insurance-number">
-                Change<span class="nhsuk-u-visually-hidden"> national insurance number</span>
-              </a>
-        
-            </dd>
-        
           </div>
         
         </dl>
 
-        <details class="nhsuk-details">
-          <summary class="nhsuk-details__summary">
-            <span class="nhsuk-details__summary-text">
-              These details will be checked every fours weeks
-            </span>
-          </summary>
-          <div class="nhsuk-details__text">
-            <p>To make sure you are still eligiable, your personal details will be checked every four weeks to confirm your eligibilty.</p>
-        
-          </div>
-        </details>
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>We will check your details every 4 weeks to make sure you are still eligible for Healthy Start.</p>
+          <p>Next eligibility check: 30 July 2022</p>
+        </div>
 
-        <a class="nhsuk-button nhsuk-u-margin-top-3" href="../dashboard">Go to dashboard</a>
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="full-name">Update personal details</a>
+
+        <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="../dashboard">
+          Go to dashboard
+        </a>
         <!-- Keep within here -->
 
     </div>

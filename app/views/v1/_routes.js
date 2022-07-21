@@ -104,7 +104,7 @@ router.post('/full-name', (req, res) => {
   const lastName = req.session.data['last-name']
 
   if (firstName && lastName) {
-    res.redirect('/v1/personal-details/cya-personal-details');
+    res.redirect('/v1/personal-details/date-of-birth');
   } else {
     res.redirect('/v1/personal-details/full-name');
   }
@@ -121,7 +121,7 @@ router.post('/date-of-birth', (req, res) => {
   const fullDateOfBirth = dobDay + ' / ' + dobMonth + ' / ' + dobYear;
 
   if (fullDateOfBirth) {
-    res.redirect('/v1/personal-details/cya-personal-details');
+    res.redirect('/v1/personal-details/address');
   } else {
     res.redirect('/v1/personal-details/date-of-birth');
   }
@@ -130,6 +130,7 @@ router.post('/date-of-birth', (req, res) => {
 
 router.post('/address', (req, res) => {
 
+  const firstName = req.session.data['first-name']
   const addressLine1 = req.session.data['address-line-1']
   const addressLine2 = req.session.data['address-line-2']
   const addressTown = req.session.data['address-town']
@@ -137,20 +138,23 @@ router.post('/address', (req, res) => {
   const addressPostcode = req.session.data['address-postcode']
   const newPin = req.session.data['pin']
 
-  if (newPin == "no" || newPin == " ") {
+  if (firstName) {
     if (addressLine1) {
-      res.redirect('/v1/personal-details/cya-personal-details');
+      res.redirect('/v1/personal-details/national-insurance-number');
     } else {
       res.redirect('/v1/personal-details/address');
+      console.log('running here')
     }
   } else if (newPin == "yes") {
     if (addressLine1) {
       res.redirect('/v1/hs-card/cya-new-pin');
     } else {
       res.redirect('/v1/personal-details/address');
+      console.log('running this')
     }
   } else {
     res.redirect('/v1/personal-details/address');
+    console.log('failed')
   }
 
 })
