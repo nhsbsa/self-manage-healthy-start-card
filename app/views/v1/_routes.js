@@ -164,7 +164,7 @@ router.post('/nino', (req, res) => {
   const nino = req.session.data['nino']
 
   if (nino) {
-    res.redirect('/v1/personal-details/cya-personal-details');
+    res.redirect('/v1/personal-details/confirmation-personal-details');
   } else {
     res.redirect('/v1/personal-details/national-insurance-number');
   }
