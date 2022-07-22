@@ -136,7 +136,7 @@ router.post('/address', (req, res) => {
   const addressTown = req.session.data['address-town']
   const addressCounty = req.session.data['address-county']
   const addressPostcode = req.session.data['address-postcode']
-  const newPin = req.session.data['pin']
+  const newPin = req.session.data['receive-pin']
 
   if (firstName) {
     if (addressLine1) {
@@ -145,7 +145,7 @@ router.post('/address', (req, res) => {
       res.redirect('/v1/personal-details/address');
       console.log('running here')
     }
-  } else if (newPin == "yes") {
+  } else if (newPin == 'post') {
     if (addressLine1) {
       res.redirect('/v1/hs-card/cya-new-pin');
     } else {
