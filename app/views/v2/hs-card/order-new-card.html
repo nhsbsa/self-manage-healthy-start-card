@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you want to unfreeze your Healthy Start card?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+        
+        <h1 class="nhsuk-heading-xl">Your new card</h1>
+
+        <p>Your new card will be sent to the following address unless you change it. </p>
+
+        <dl class="nhsuk-summary-list">
+          
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Client ID
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  123456
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+
+                </dd>
+            
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Cardholder name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Sarah Smith
+                </dd>
+            
+                <dd class="nhsuk-summary-list__actions">
+
+                </dd>
+            
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Delivery address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if (data['address-line-1']) %}
+                    {{data['address-line-1']}}<br>
+                {% if (data['address-line-2']) %}
+                  {{data['address-line-2']}}<br>
+                {% endif %}
+                    {{data['address-town']}}<br>
+                    {{data['address-county']}}<br>
+                    {{data['address-postcode']}}<br>
+                {% else %}
+                    13 Building Street Road<br>Leeds<br> N34 1HS
+                {% endif %}
+              </dd>
+          
+              <dd class="nhsuk-summary-list__actions">
+          
+                <a href="../personal-details/address">
+                  Change<span class="nhsuk-u-visually-hidden"> delivery address</span>
+                </a>
+          
+              </dd>
+          
+            </div>
+          
+          </dl>
+
+          <a class="nhsuk-button" href="card-order-complete">Continue</a>
+
+    </div>
+</div>
+
+{% endblock %}

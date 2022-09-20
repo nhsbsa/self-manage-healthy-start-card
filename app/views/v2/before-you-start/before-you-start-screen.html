@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+<!-- variables -->
+{% set loggedIn = false %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start)
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    {{ backLink({
+    "href": "javascript:history.go(-1)",
+    "text": "Go back"
+    }) }}
+
+    <h1><span role="text">Get help to buy food and milk <span class="nhsuk-caption-xl nhsuk-caption--bottom"><span
+            class="nhsuk-u-visually-hidden">-</span> (Healthy Start)</span></span></h1>
+
+  </div>
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et odio, eius omnis tempora delectus est accusamus in nisi saepe sint dolorem minus, veniam repellendus necessitatibus, ipsa animi explicabo magni ut!</p>
+
+    <h3 class="nhsuk-heading-l">Apply for Healthy Start</h3>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur minima voluptatibus voluptates
+      exercitationem excepturi consectetur optio nulla maiores soluta harum!</p>
+
+    <div class="nhsuk-action-link">
+      <a class="nhsuk-action-link__link" href="https://apply-healthy-start-vouchers.herokuapp.com/current/start">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+          </path>
+        </svg>
+        <span class="nhsuk-action-link__text">Apply for Healthy Start</span>
+      </a>
+    </div>
+
+    <hr>
+
+    <h3 class="nhsuk-heading-l">Manage your Healthy Start card</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur minima voluptatibus voluptates
+      exercitationem excepturi consectetur optio nulla maiores soluta harum!</p>
+
+    <div class="nhsuk-action-link">
+      <a class="nhsuk-action-link__link" href="login">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          aria-hidden="true" width="36" height="36">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z">
+          </path>
+        </svg>
+        <span class="nhsuk-action-link__text">Manage your Healthy Start card</span>
+      </a>
+    </div>
+
+    <!-- Keep within here -->
+
+  </div>
+
+</div>
+{% endblock %}

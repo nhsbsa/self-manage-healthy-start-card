@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        <h1 class="nhsuk-heading-xl">Order a new card</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <p class="nhsuk-u-margin-bottom-5">You can order a new card if your current card is damaged or has been stolen. Your current card will be blocked, and your new card should arrive within 10 days.</p>
+
+        <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="card-replacement">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">Order a new card</span>
+            </a>
+        </div>
+
+        <h2 class="nhsuk-heading-l">If you have lost your Healthy Start card</h2>
+
+        <p>You can freeze your card to give you time to look for it. Your card cannot be used once it is frozen. You can then unfreeze it and continue to use it as normal if you find it.</p>
+        <p class="nhsuk-u-margin-bottom-5">If you cannot find your card within 24 hours, we recommend you order a new card so we can block your current one.</p>
+
+        <div class="nhsuk-action-link">
+            <a class="nhsuk-action-link__link" href="freeze-card">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">Freeze your card</span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

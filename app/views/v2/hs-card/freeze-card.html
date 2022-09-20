@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Do you want to freeze your Healthy Start card?
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        {{ backLink({
+            "href": "javascript:history.go(-1)",
+            "text": "Go back"
+        }) }}
+
+        {% if (data['freeze'] == 'yes') %}
+            <form action="/v2/unfreeze-card" method="post">
+        {% else %}
+            <form action="/v2/freeze-card" method="post">
+        {% endif %}
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                    <h1 class="nhsuk-fieldset__heading">
+                        {% if (data['freeze'] == 'yes') %}
+                            Do you want to unfreeze your Healthy Start card?
+                        {% else %}
+                            Do you want to freeze your Healthy Start card?
+                        {% endif %}
+                    </h1>
+                </legend>
+
+                    {% if (data['freeze'] == 'yes') %}
+                        <p>Your card will be frozen immediately. You will not be able to use it again until you unfreeze it.</p>
+                    {% else %}
+                        <p>Your card will no longer be frozen, and you will be able to use it straight away.</p>
+                    {% endif %}
+                
+
+                    <div class="nhsuk-radios nhsuk-radios--inline">
+                        <div class="nhsuk-radios__item">
+                            {% if (data['freeze'] == 'yes') %}
+                                <input class="nhsuk-radios__input" id="yes" name="unfreeze" type="radio" value="yes">
+                                <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            {% else %}
+                                <input class="nhsuk-radios__input" id="yes" name="freeze" type="radio" value="yes">
+                                <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                            {% endif %}
+                                Yes
+                            </label>
+                        </div>
+                        <div class="nhsuk-radios__item">
+                            {% if (data['freeze'] == 'yes') %}
+                                <input class="nhsuk-radios__input" id="no" name="unfreeze" type="radio" value="no">
+                                <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            {% else %}
+                                <input class="nhsuk-radios__input" id="no" name="freeze" type="radio" value="no">
+                                <label class="nhsuk-label nhsuk-radios__label" for="no">
+                            {% endif %}
+                            
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </div>
+
+            <details class="nhsuk-details">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    If your card has been stolen
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>You must order a new card straight away. Your current card will be blocked and a new one will be sent to you.</p>
+                  <p><a href="card-replacement">Order a new card</a></p>              
+                </div>
+              </details>
+
+            <button class="nhsuk-button" type="submit">
+                Continue
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
