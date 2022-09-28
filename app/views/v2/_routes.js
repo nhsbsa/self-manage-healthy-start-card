@@ -6,8 +6,25 @@
 const express = require('express');
 const router = express.Router();
 
-// ********************************
+// ****************************************
+// * Log in - 2 factor authentication
+// ****************************************
 
+router.post('/authenticate-type', (req, res) => {
+
+  const authType = req.session.data['auth']
+
+  if (authType) {
+    res.redirect('/v2/before-you-start/authenticate-details')
+  } else {
+    res.redirect('/v2/before-you-start/authenticate-type')
+  }
+
+})
+
+// ****************************************
+// * Freeze or Unfreeze card
+// ****************************************
 
 // Freezing healthy start card
 router.post('/freeze-card', (req, res) => {
