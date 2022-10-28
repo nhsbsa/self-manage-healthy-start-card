@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+
+        <h1 class="nhsuk-heading-xl">Your Healthy Start card</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      
+
+        <ul class="nhsuk-grid-row nhsuk-card-group">
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="pregnancy-and-children">Pregnancy and Children</a>
+                  </h2>
+                  <p class="nhsuk-card__description">View your due date and children’s details</p>
+                </div>
+              </div>
+          
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="receive-new-pin">Request your Healthy Start PIN</a>
+                  </h2>
+                  <p class="nhsuk-card__description">Request to be sent your PIN number if you have forgotten it</p>
+                </div>
+              </div>
+          
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="lost-or-stolen-card">Freeze your card</a>
+                  </h2>
+                  <p class="nhsuk-card__description">Freeze your healthy start card</p>
+                </div>
+              </div>
+          
+            </li>
+            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          
+              <div class="nhsuk-card nhsuk-card--clickable">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="your-transactions">Your transactions</a>
+                  </h2>
+                  <p class="nhsuk-card__description">View your transactions from the past 4 weeks</p>
+                </div>
+              </div>
+          
+            </li>
+          </ul>
+        
+        
+
+    </div>
+
+</div>
+{% endblock %}

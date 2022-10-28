@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+<!-- variables -->
+{% set loggedIn = false %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l">Manage your Healthy Start card</h1>        
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+          <p>Use this service to:</p>
+          <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>check your balance</li>
+            <li>view details about your next payment</li>
+            <li>update your personal details</li>
+            <li>request a new PIN</li>
+            <li>view your transactions</li>
+          </ul>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="username">
+              Username
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="username" name="test-width-20" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="password">
+              Password
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="password" name="test-width-20" type="text">
+          </div>
+
+          <a href="authenticate-type" class="nhsuk-button" type="submit">
+            Sign in
+          </a>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Accessing your account
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <p>We emailed your username and password to the email address you provided when you successfully applied for Healthy Start.</p>
+              <p>You will need to change your password after you log in for the first time.</p>
+            </div>
+          </details>
+                    
+        <!-- Keep within here -->
+
+    </div>
+
+</div>
+{% endblock %}

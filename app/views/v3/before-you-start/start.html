@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+<!-- variables -->
+{% set loggedIn = false %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Manage your Healthy Start card</h1>        
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <p>Use this service to:</p>
+        <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-7">
+            <li>check your balance</li>
+            <li>view details about your next payment</li>
+            <li>update your personal details</li>
+            <li>request a new PIN</li>
+            <li>view your transactions</li>
+        </ul>
+
+        <a class="nhsuk-button" href="login">Start</a>
+
+    </div>
+
+</div>
+{% endblock %}

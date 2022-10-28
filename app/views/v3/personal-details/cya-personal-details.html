@@ -1,0 +1,124 @@
+Start code
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}  
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-xl">Your personal details</h1>
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <!-- Keep within here -->
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Name
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if (data['first-name']) and (data['last-name']) %}
+                {{ data['first-name'] }} {{ data['last-name'] }}
+              {% else %}
+                Sarah Smith
+              {% endif %}
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if (data['dob-day']) and (data['dob-month']) and (data['dob-year']) %}
+                {{ data['dob-day'] }} / {{ data['dob-month'] }} / {{ data['dob-year'] }}
+              {% else %}
+                01 / 01 / 1992
+              {% endif %}
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if (data['address-line-1']) %}
+                {{data['address-line-1']}}<br>
+                {% if (data['address-line-2']) %}
+                  {{data['address-line-2']}}<br>
+                {% endif %}
+                {{data['address-town']}}<br>
+                {{data['address-county']}}<br>
+                {{data['address-postcode']}}<br>
+              {% else %}
+              13 Building Street Road<br>Leeds<br> N34 1HS
+              {% endif %}
+            </dd>
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {% if (data['nino']) %}
+                {{ data['nino'] }}
+              {% else %}
+                <p>AB 12 34 56 C</p>
+              {% endif %}
+            </dd>
+        
+          </div>
+        
+        </dl>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>We will check your details every 4 weeks to make sure you are still eligible for Healthy Start.</p>
+          <p>Next eligibility check: 30 July 2022</p>
+        </div>
+
+        <p>You will need to provide evidence of your new details after you update them.</p>
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Type of evidence needed
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>You will need to provide a copy of one of the following:</p>
+            <ul class="nhsuk-list nhsuk-list--bullet">
+              <li>Birth certificate (full or short version)</li>
+              <li>Passport</li>
+              <li>Driving license</li>
+              <li>UK visa</li>
+            </ul>
+          </div>
+        </details>
+
+        
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3" href="full-name">Update personal details</a>
+
+        <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="../dashboard">
+          Continue
+        </a>
+        <!-- Keep within here -->
+
+    </div>
+
+</div>
+{% endblock %}

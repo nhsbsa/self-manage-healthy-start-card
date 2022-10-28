@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start)
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="nhsuk-heading-xl">Pregnancy and Children</h1>
+
+  </div>
+</div>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+
+    <p>Your expected due date is 23 August 2022.</p>
+
+
+    <h2 class="nhsuk-heading-m">Your children</h2>
+
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                {% if (data['childsfirstname']) and (data['childslastname']) %}
+                  {{ data['childsfirstname'] }} {{ data['childslastname'] }}
+                {% else %}
+                  John Smith
+                {% endif %}
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {% if (data['childsfirstname']) and (data['childslastname']) %}
+                  {{ data['childsdateofbirthday'] }} / {{ data['childsdateofbirthmonth'] }} / {{ data['childsdateofbirthyear'] }}
+                {% else %}
+                  01 / 01 / 2020
+                {% endif %}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Edit<span class="nhsuk-u-visually-hidden"> child details</span>
+                </a>
+              </dd>
+            </div>
+          
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Sarah Smith
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01  / 01 / 2021
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Edit<span class="nhsuk-u-visually-hidden"> child details</span>
+                </a>
+              </dd>
+            </div>     
+
+            <!-- {% if data['childList'] %}
+
+            {% for item in data['childList'] %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__value">{{ item.ChildsFirstName }} {{ item.ChildsLastName }}</dt>
+              <dd class="nhsuk-summary-list__value">Born on {{ item.ChildsDOB }}</dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">Edit<span class="nhsuk-u-visually-hidden"> child</span></a>
+              </dd>
+            </div>
+            {% endfor %}
+
+
+            {% else %}
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                  John Smith
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                  01 / 01 / 2020
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a href="child-name">
+                  Edit<span class="nhsuk-u-visually-hidden"> child</span>
+                </a>
+              </dd>
+            </div>
+
+            {% endif %} -->
+
+    </dl>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>Your children’s details are checked every 4 weeks to make sure you are still eligible for Healthy Start.</p>
+      <p>Next eligibility check: 30 July 2022</p>
+    </div>
+
+    <a class="nhsuk-button" href="../dashboard">Continue</a>
+
+  </div>
+
+</div>
+{% endblock %}

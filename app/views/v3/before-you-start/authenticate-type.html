@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+<!-- variables -->
+{% set loggedIn = false %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        
+        <form action="/v3/authenticate-type" method="POST">
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset">
+                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                    <h1 class="nhsuk-fieldset__heading">
+                        Chose one of these options so that we can identify you
+                    </h1>
+                  </legend>
+
+                  <p>We identify you by sending a one time code to your chosen option.</p>
+              
+                  <div class="nhsuk-radios">
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="auth-mobile" name="auth" type="radio" value="Mobile">
+                      <label class="nhsuk-label nhsuk-radios__label" for="auth-mobile">
+                        Mobile
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="auth-email" name="auth" type="radio" value="Email">
+                      <label class="nhsuk-label nhsuk-radios__label" for="auth-email">
+                        Email
+                      </label>
+                    </div>
+              
+                  </div>
+                </fieldset>
+              
+            </div>
+            <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+    </div>
+
+</div>
+{% endblock %}

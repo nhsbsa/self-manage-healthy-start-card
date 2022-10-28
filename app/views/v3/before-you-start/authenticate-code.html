@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+<!-- variables -->
+{% set loggedIn = false %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        
+        <form action="../dashboard" method="POST">
+            <div class="nhsuk-form-group">
+                <h1 class="nhsuk-label-wrapper">
+                  <label class="nhsuk-label nhsuk-label--l" for="auth-code">
+                    Enter your one time code
+                  </label>
+                </h1>
+                <p>Your code was sent to your {% if data['auth'] === 'Mobile' %}mobile{% else %}email{% endif %}, this will be valid for 10 minutes.</p>
+                <p class="nhsuk-hint">For example, H7342</p>
+                <input class="nhsuk-input nhsuk-input--width-5" id="auth-code" name="auth-code" type="text">
+              </div>
+            <button class="nhsuk-button" type="submit">Continue</button>
+        </form>
+
+
+    </div>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+    </div>
+
+</div>
+{% endblock %}

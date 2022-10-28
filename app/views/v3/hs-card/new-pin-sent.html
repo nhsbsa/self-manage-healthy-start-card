@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+[Child name] has been updated
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-card" style="background: #005EB8; margin-top: 0;">
+            <div class="nhsuk-card__content">
+              <h1 class="nhsuk-card__heading" style="text-align: center; color: white;">
+                Your new PIN has been sent
+              </h1>
+            </div>
+          </div>
+
+          <p>You should get your new PIN within 24 hours. It has been sent to:</p>
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">
+              {% if (data['receive-pin']) == 'mobile' %}
+                Mobile
+              {% elseif (data['receive-pin']) == 'post' %}
+                Post
+              {% endif %}
+            </span>
+            <p>
+              {% if (data['receive-pin']) == 'mobile' %}
+                {{ data['mobilephonenumber'] }}
+              {% elseif (data['receive-pin']) == 'post' %}
+                {{data['address-line-1']}}<br>
+                {% if (data ['address-line-2']) %}
+                  {{data['address-line-2']}}<br>
+                {% endif %}
+                {{data['address-town']}}<br>
+                {{data['address-county']}}<br>
+                {{data['address-postcode']}}<br>
+              {% endif %}
+            </p>
+          </div>
+
+          <p>You can continue to use contactless payments while you wait for your new PIN.</p>
+          <p>Use your card as normal with your new PIN once you receive it.</p>
+
+          <a class="nhsuk-button" href="../dashboard">Continue</a>
+
+    </div>
+
+</div>
+
+{% endblock %}

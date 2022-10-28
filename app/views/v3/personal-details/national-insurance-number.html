@@ -1,0 +1,49 @@
+Start code
+
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+Get help to buy food and milk (Healthy Start) 
+{% endblock %}
+
+{% block content %}    
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+    }) }}
+      <form action="/v3/nino" method="POST">
+        <!-- Keep within here -->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="nino">
+            <h1 class="nhsuk-fieldset__legend--xl">What is your national Insurance number?</h1>
+          </label>
+          <div class="nhsuk-hint" id="example-with-hint-text-hint">
+          It is on your National Insurance card, benefit letter, payslip or P60. For example, QQ 12 34 56 C.
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-10" id="nino" name="nino" type="text" aria-describedby="example-with-hint-text-hint">
+        </div>
+
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Why we ask for your National Insurance number
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>We use this to check your eligibility for the service with other government departments when required.</p>
+        
+          </div>
+        </details>
+
+        <button class="nhsuk-button" type="submit">Continue</button>
+      </form>
+
+        <!-- Keep within here -->
+
+    </div>
+
+</div>
+{% endblock %}
